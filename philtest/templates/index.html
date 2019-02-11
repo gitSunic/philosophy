@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>sunicphilosopher</title>
+	{% load staticfiles %}
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="{% static 'style.css' %}" type="text/css">
+</head>
+<body>
+	<div class="container-fluid">
+		<p id="title">Любовь к мудрости</p>
+		<input type="text" id="search" placeholder="Цитата...">
+		{% if user.is_authenticated %}
+		<div class="col-12" id="quote-add">
+			<p id="quote-add-p">Добавить</p>
+			<form action="add/" method="post" id="addform">
+				{% csrf_token %}
+				Автор: <input type="text" name="author" required>
+				<br>
+				Цитата:
+				<br>
+				<TEXTAREA id="textarea" name="text" required></TEXTAREA>
+				<br>
+				<input type="submit" class="button" value="добавить">
+			</form>
+		</div>
+		{% else %}
+		<div id="login">login</div>
+		{% endif %}
+		{% for i in quotes %}
+		<div class="col-12 quote-block"><span>{{i}}</span></div>
+		{% endfor %}
+	</div>
+	
+	<div id="loginblock">
+		<form action="login/" method="post" id="form">
+			{% csrf_token %}
+			username: <input type="text" name="username" required>
+			<br>
+			password: <input type="password" name="password" required>
+			<br>
+			<input type="submit" class="button" value="sigh in">
+		</form>
+	</div>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="{% static 'script.js' %}" type="text/javascript"></script>
+</body>
+</html>

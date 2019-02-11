@@ -1,0 +1,74 @@
+#title {
+	 text-align: center;
+	 color: darkblue;
+	 font-size: 28px;
+	 font-weight: 700;
+}
+#quote-add {
+	border: 2px solid black;
+	height: 40px;
+	border-radius: 10px;
+	font-size: 20px;
+	line-height: 35px;
+	cursor: pointer;
+	color: green;
+	font-weight: 500;
+	overflow: hidden;
+}
+#quote-add-p {
+	text-align: center;
+}
+#addform input {
+	width: 60%;
+}
+#textarea {
+	width: 100%;
+}
+#login {
+	position: absolute;
+	right: 10px;
+	top: 5px;
+	cursor: pointer;
+	color: blue;
+	text-decoration: underline;
+}
+#loginblock {
+	display: none;
+	position: absolute;
+	background-color: #fff;
+	width: 400px;
+	height: 120px;
+	left: 50%;
+	margin-left: -200px;
+	top: 50px;
+	border: 1px solid black;
+	border-radius: 10px;
+	padding: 10px;
+}
+input {
+	border: 1px solid black;
+	border-radius: 5px;
+	margin: 2px;
+	padding: 2px;
+}
+.button {
+	background-color: lightgreen;
+	cursor: pointer;
+	font-size: 20px;
+}
+#addform {
+	margin: 10px;
+}
+span {
+	font-size: 18px;
+	font-style: italic;
+	font-weight: 400;
+	color: blue;
+}
+#search {
+	width: 100%;
+	border: 1px solid black;
+	margin-top: 5px;
+	padding: 3px;
+	font-size: 18px;
+}
