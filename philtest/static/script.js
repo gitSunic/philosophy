@@ -3,7 +3,7 @@ $('#login').click(function() {
 });
 $('#quote-add-p').click(function() {
 	$(this).hide();
-	$('#quote-add').css({'height':'240px'});
+	$('#quote-add').css({'height':'300px'});
 	console.log('!');
 });
 $('#search').on("input", function() {
