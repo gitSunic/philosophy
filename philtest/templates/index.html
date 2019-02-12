@@ -10,29 +10,30 @@
 <body>
 	<div class="container-fluid">
 		<p id="title">Любовь к мудрости</p>
-		<input type="text" id="search" placeholder="Цитата...">
-		{% if user.is_authenticated %}
-		<div class="col-12" id="quote-add">
-			<p id="quote-add-p">Добавить</p>
+		<div class="row">
+			{% if user.is_authenticated %}
+			<div class="col-8" style="padding: 0 10px 0 0;"><input type="text" id="search" placeholder="Цитата..."></div>
+			<div class="col-4" id="quote-add"><p id="quote-add-p">Добавить</p></div>
 			<form action="add/" method="post" id="addform">
-				{% csrf_token %}
-				Автор: <input type="text" name="author" required>
-				<br>
-				Цитата:
-				<br>
-				<TEXTAREA id="textarea" name="text" required></TEXTAREA>
-				<br>
-				<input type="submit" class="button" value="добавить">
-			</form>
+					{% csrf_token %}
+					Автор: <input type="text" name="author" required>
+					<br>
+					Цитата:
+					<br>
+					<TEXTAREA id="textarea" name="text" required></TEXTAREA>
+					<br>
+					<input type="submit" class="button" value="добавить">
+				</form>
+			{% else %}
+			<input class="col-12" type="text" id="search" placeholder="Цитата...">
+			<div id="login">login</div>
+			{% endif %}
+			{% for i in quotes %}
+			<div class="col-12 quote-block"><span>{{i}}</span></div>
+			{% endfor %}
 		</div>
-		{% else %}
-		<div id="login">login</div>
-		{% endif %}
-		{% for i in quotes %}
-		<div class="col-12 quote-block"><span>{{i}}</span></div>
-		{% endfor %}
 	</div>
-	
+	<div id="dark"></div>
 	<div id="loginblock">
 		<form action="login/" method="post" id="form">
 			{% csrf_token %}
@@ -40,7 +41,7 @@
 			<br>
 			password: <input type="password" name="password" required>
 			<br>
-			<input type="submit" class="button" value="sigh in">
+			<input type="submit" class="button" value="sign in">
 		</form>
 	</div>
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>

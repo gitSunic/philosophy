@@ -1,3 +1,6 @@
+body {
+	background-color: lightgrey;
+}
 #title {
 	 text-align: center;
 	 color: darkblue;
@@ -5,25 +8,34 @@
 	 font-weight: 700;
 }
 #quote-add {
-	border: 2px solid black;
-	height: 40px;
-	border-radius: 10px;
+	border: 1px solid black;
+	height: 57px;
+	border-radius: 6px;
 	font-size: 28px;
 	cursor: pointer;
 	color: green;
 	font-weight: 500;
 	overflow: hidden;
+	background-color: white;
 }
 #quote-add-p {
 	text-align: center;
-	line-height: 35px;
+	line-height: 55px;
+}
+#addform {
+	display: none;
+	width: 100%;
+	font-size: 28px;
+	color: black;
+	font-weight: 600;
 }
 #addform input {
-	width: 60%;
+	width: 100%;
 }
 #textarea {
 	width: 100%;
 	height: 120px;
+	border: 1px solid black;
 }
 #login {
 	position: absolute;
@@ -32,13 +44,13 @@
 	cursor: pointer;
 	color: blue;
 	text-decoration: underline;
+	z-index: 101;
 }
 #loginblock {
 	display: none;
 	position: absolute;
 	background-color: #fff;
 	width: 400px;
-	height: 120px;
 	left: 50%;
 	margin-left: -200px;
 	top: 50px;
@@ -73,4 +85,20 @@ span {
 	margin-top: 5px;
 	padding: 3px;
 	font-size: 28px;
+}
+.quote-block {
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 5px;
+}
+#dark {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.8);
 }

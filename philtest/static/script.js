@@ -1,10 +1,17 @@
 $('#login').click(function() {
+	$('#dark').show();
 	$('#loginblock').show();
 });
 $('#quote-add-p').click(function() {
+	if ($('#addform').css("display") == "none") {
+		$('#addform').show();
+	} else {
+		$('#addform').hide();
+	}
+});
+$('#dark').click(function() {
 	$(this).hide();
-	$('#quote-add').css({'height':'300px'});
-	console.log('!');
+	$('#loginblock').hide();
 });
 $('#search').on("input", function() {
 	$('#quote-add').hide();
